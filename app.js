@@ -96,6 +96,14 @@ function fillSelect(select, values, allLabel) {
   select.value = keep ? previous : 'all';
 }
 
+function resetFilterState() {
+  Object.assign(state, { brand: 'all', stage: 'all', type: 'all', form: 'all' });
+  ['filterBrand', 'filterStage', 'filterType', 'filterForm'].forEach((id) => {
+    const el = $(id);
+    if (el) el.value = 'all';
+  });
+}
+
 function populateFilters() {
   const list = currentItems();
   const brands = [...new Set(list.map((i) => i.brand))].sort((a, b) => a.localeCompare(b, 'ko'));
@@ -199,7 +207,7 @@ function cardEl(item, isBest) {
   meta.className = 'card__note';
   meta.style.marginTop = '8px';
   meta.style.color = 'var(--ink-faint)';
-  meta.textContent = `${item.seller || '판매처'} 최저가 · ${fmtDate(item.checkedAt)} 확인`;
+  meta.textContent = `${item.seller || '판매처'}${String(item.seller || '').endsWith('최저가') ? '' : ' 최저가'} · ${fmtDate(item.checkedAt)} 확인`;
   li.appendChild(meta);
 
   return li;
@@ -307,6 +315,7 @@ function setCategory(category) {
     renderCalc();
     return;
   }
+  resetFilterState();
   populateFilters();
   render();
 }
@@ -324,6 +333,7 @@ function wire() {
   $('sortBy').addEventListener('change', (e) => { state.sort = e.target.value; render(); });
 
   $('resetFilters').addEventListener('click', () => {
+    resetFilterState();
     populateFilters();
     render();
   });

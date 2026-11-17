@@ -16,6 +16,9 @@
 
 * { box-sizing: border-box; }
 
+/* .field 등 display 규칙이 [hidden]을 덮어쓰지 않도록 */
+[hidden] { display: none !important; }
+
 html { -webkit-text-size-adjust: 100%; }
 
 body {
@@ -150,13 +153,11 @@ body {
 
 .filters__row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 9px;
 }
 
 .field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
-
-.field--sort { grid-column: span 2; }
 
 .field--wide { grid-column: span 2; }
 
@@ -482,8 +483,6 @@ body {
   .wrap { padding: 34px 24px 56px; }
   .hero__title { font-size: 32px; }
   .tabs { max-width: 460px; }
-  .filters__row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .field--sort { grid-column: span 4; }
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
   .card__unit strong { font-size: 36px; }
 }
