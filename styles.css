@@ -129,16 +129,40 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* ---------- notice ---------- */
+/* ---------- notice (쿠팡 파트너스 필수 고지) ---------- */
 .notice {
+  position: relative;
   margin: 0 0 14px;
-  padding: 11px 14px;
-  border-radius: 12px;
-  background: var(--accent-tint);
-  border: 1px solid #f6d3c2;
-  color: #8a3a12;
-  font-size: 12.5px;
-  line-height: 1.45;
+  padding: 12px 14px 12px 40px;
+  border-radius: 13px;
+  background: #fff6ef;
+  border: 1px solid #f0bfa3;
+  border-left: 4px solid var(--accent);
+  color: #7d330f;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  word-break: keep-all;
+  box-shadow: 0 1px 2px rgba(20, 32, 27, .04);
+}
+
+.notice::before {
+  content: "i";
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 18px;
+  text-align: center;
 }
 
 /* ---------- filters ---------- */
@@ -340,6 +364,45 @@ body {
   color: var(--ink-faint);
   line-height: 1.4;
   min-width: 0;
+}
+
+/* 카드 안 제휴 링크 표기: COUPANG / link.coupang.com/... */
+.card__partner {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fafcfa;
+}
+
+.card__partner-brand {
+  flex: none;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  color: var(--ink-faint);
+  line-height: 1.5;
+}
+
+.card__partner-url {
+  min-width: 0;
+  color: #0a8a4a;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.card__partner-url:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+.card__partner-url:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .buy {

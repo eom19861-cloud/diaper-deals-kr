@@ -50,6 +50,18 @@ function buyHref(item) {
   return item.url;
 }
 
+/* 화면에 보여줄 때는 프로토콜을 떼고 도메인부터 보여줍니다. (link.coupang.com/a/...) */
+function prettyUrl(url) {
+  const s = String(url || '').trim();
+  const noProto = s.replace(/^https?:\/\//i, '');
+  return noProto.length > 1 ? noProto.replace(/\/$/, '') : noProto;
+}
+
+function partnerLinkOf(item) {
+  if (!config.partnersEnabled) return '';
+  return String(item.partnerUrl || '').trim();
+}
+
 /* ---------- rendering ---------- */
 function currentItems() {
   return items.filter((it) => it.category === state.category);
@@ -209,6 +221,28 @@ function cardEl(item, isBest) {
   meta.style.color = 'var(--ink-faint)';
   meta.textContent = `${item.seller || '판매처'} 기준 · ${fmtDate(item.checkedAt)} 확인`;
   li.appendChild(meta);
+
+  /* 제휴 링크가 있으면 카드에 실제 링크 주소(link.coupang.com/...)를 그대로 보여 줍니다. */
+  const partnerUrl = partnerLinkOf(item);
+  if (partnerUrl) {
+    const partner = document.createElement('div');
+    partner.className = 'card__partner';
+
+    const pBrand = document.createElement('span');
+    pBrand.className = 'card__partner-brand';
+    pBrand.textContent = 'COUPANG';
+
+    const pUrl = document.createElement('a');
+    pUrl.className = 'card__partner-url';
+    pUrl.href = partnerUrl;
+    pUrl.target = '_blank';
+    pUrl.rel = 'sponsored noopener noreferrer';
+    pUrl.textContent = prettyUrl(partnerUrl);
+    pUrl.title = partnerUrl;
+
+    partner.append(pBrand, pUrl);
+    li.appendChild(partner);
+  }
 
   return li;
 }

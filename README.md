@@ -8,7 +8,7 @@
 - 필터: 기저귀(브랜드·단계·팬티형/밴드형), 물티슈(브랜드·캡형/리필형)
 - 정렬: **1매당 최저가순(기본)**, 총 구매가순, 최신 갱신순
 - 상단에 마지막 확인 시각(`updatedAt`) 표시
-- 쿠팡파트너스 대비: `data/config.json`의 `partnersEnabled` 한 줄로 고지 문구와 제휴 링크가 켜집니다
+- 쿠팡파트너스 대비: `data/config.json`의 `partnersEnabled` 한 줄로 고지 문구와 제휴 링크 표시가 켜집니다
 
 ## 구조
 
@@ -57,8 +57,12 @@ data/config.json    사이트 문구·파트너스 설정
    - `partnersEnabled`를 `true`로,
    - `partners.affiliateId`를 발급받은 ID로 채웁니다.
 2. 상품별 `partnerUrl`에 제휴 링크를 넣습니다. `partnerUrl`이 비어 있으면 원래 `url`로 이동합니다.
-3. `partnersEnabled`가 `true`이면 상단에 `partnersNotice` 고지 문구가 자동으로 표시되고,
-   구매 버튼에 `rel="sponsored"`가 붙습니다.
+3. `partnersEnabled`가 `true`이면
+   - 히어로 바로 아래에 **필수 고지 문구**(`partnersNotice`) 배너가 항상 표시되고,
+   - `partnerUrl`이 있는 카드에는 구매 버튼 아래에 **`COUPANG` + 제휴 링크 주소**(`link.coupang.com/...`)가 함께 표시되며,
+   - 구매 버튼과 제휴 링크에 `rel="sponsored"`가 붙습니다.
+
+고지 문구와 제휴 링크 표기는 쿠팡파트너스 심사(대가성 문구·링크 노출)에서 확인하는 항목이라 지우지 마세요.
 
 > 쿠팡파트너스는 제휴 링크로 발생한 구매에 수수료를 지급하며, 고지 문구 노출이 필수입니다.
 > 가격·재고는 파트너스 API 약관상 별도 계약이 필요할 수 있으니, 자동 수집 전에 약관을 확인하세요.
