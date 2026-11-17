@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>기저귀·물티슈 단가 비교</title>
+<meta name="description" content="기저귀와 아기 물티슈를 1매당 가격으로 비교하는 최저가 계산기. 같은 돈이면 몇 매를 사는지 한눈에 봅니다." />
+<meta name="theme-color" content="#1f7a5a" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B7%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="hero__eyebrow">1매당 단가로 비교</p>
+    <h1 class="hero__title">기저귀·물티슈<br />최저가 계산기</h1>
+    <p class="hero__desc">같은 돈이면 몇 매를 사는지 — 총 가격이 아니라 <strong>1매당 가격</strong>으로 비교하세요.</p>
+    <div class="hero__meta">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="updatedAt">불러오는 중…</span>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="카테고리">
+    <button class="tab is-active" role="tab" aria-selected="true" data-category="diaper">기저귀</button>
+    <button class="tab" role="tab" aria-selected="false" data-category="wipe">아기 물티슈</button>
+    <button class="tab" role="tab" aria-selected="false" data-category="calc">직접 계산기</button>
+  </nav>
+
+  <div id="partnersNotice" class="notice" hidden></div>
+
+  <section id="listView">
+    <div class="filters" id="filters">
+      <div class="filters__row">
+        <label class="field">
+          <span class="field__label">브랜드</span>
+          <select id="filterBrand" class="select"></select>
+        </label>
+        <label class="field" id="stageField">
+          <span class="field__label">단계</span>
+          <select id="filterStage" class="select"></select>
+        </label>
+        <label class="field" id="typeField">
+          <span class="field__label">타입</span>
+          <select id="filterType" class="select"></select>
+        </label>
+        <label class="field" id="formField" hidden>
+          <span class="field__label">형태</span>
+          <select id="filterForm" class="select"></select>
+        </label>
+        <label class="field field--sort">
+          <span class="field__label">정렬</span>
+          <select id="sortBy" class="select">
+            <option value="unit">1매당 최저가순</option>
+            <option value="total">총 구매가순</option>
+            <option value="updated">최신 갱신순</option>
+          </select>
+        </label>
+      </div>
+      <div class="filters__summary">
+        <span id="resultCount">–</span>
+        <button id="resetFilters" class="link" type="button">필터 초기화</button>
+      </div>
+    </div>
+
+    <ul id="cards" class="cards" aria-live="polite"></ul>
+    <p id="emptyState" class="empty" hidden>조건에 맞는 상품이 없습니다. 필터를 바꿔 보세요.</p>
+  </section>
+
+  <section id="calcView" class="calc" hidden>
+    <h2 class="calc__title">직접 단가 계산기</h2>
+    <p class="calc__desc">마트에서 본 가격이나 장바구니에 담은 상품이 싼지 바로 확인하세요.</p>
+
+    <div class="calc__form">
+      <label class="field field--wide">
+        <span class="field__label">분류(비교 기준)</span>
+        <select id="calcCategory" class="select">
+          <option value="diaper">기저귀</option>
+          <option value="wipe">아기 물티슈</option>
+        </select>
+      </label>
+      <label class="field field--wide">
+        <span class="field__label">총 결제 금액(원, 배송비 포함)</span>
+        <input id="calcPrice" class="input" type="number" inputmode="numeric" min="0" step="100" placeholder="예: 42900" />
+      </label>
+      <label class="field">
+        <span class="field__label">팩당 매수</span>
+        <input id="calcPerPack" class="input" type="number" inputmode="numeric" min="1" step="1" placeholder="예: 36" />
+      </label>
+      <label class="field">
+        <span class="field__label">팩 수</span>
+        <input id="calcPackCount" class="input" type="number" inputmode="numeric" min="1" step="1" value="4" />
+      </label>
+    </div>
+
+    <div class="calc__result" id="calcResult" aria-live="polite">
+      <p class="calc__hint">금액과 매수를 입력하면 1매당 가격과 비교 결과가 나옵니다.</p>
+    </div>
+    <p class="calc__basis" id="calcBasis"></p>
+  </section>
+
+  <footer class="foot">
+    <ul id="footNotes" class="foot__notes"></ul>
+    <p class="foot__src">데이터 <code>data/products.json</code> · 설정 <code>data/config.json</code></p>
+  </footer>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

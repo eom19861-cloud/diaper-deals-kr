@@ -1,0 +1,21 @@
+{
+  "siteTitle": "기저귀·물티슈 단가 비교",
+  "siteDescription": "같은 돈이면 몇 매를 사는지 — 기저귀와 아기 물티슈를 1매당 가격으로 비교합니다.",
+  "partnersEnabled": false,
+  "partnersNotice": "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+  "partnersDisclosureShort": "쿠팡 파트너스 수수료를 받습니다",
+  "updatedAtLabel": "최저가 확인 시각",
+  "buyButtonLabel": "구매하러 가기",
+  "defaultSort": "unit",
+  "notes": [
+    "가격은 각 판매처 공개 최저가(배송비 포함)이며 쿠폰·카드 할인에 따라 달라질 수 있습니다.",
+    "1매당 가격 = (상품가 + 배송비) ÷ 총 매수 로 계산합니다.",
+    "products.json의 updatedAt만 갱신하면 화면의 기준 시각이 함께 바뀝니다."
+  ],
+  "partners": {
+    "provider": "coupang",
+    "affiliateId": "",
+    "linkTemplate": "https://link.coupang.com/a/{affiliateId}",
+    "itemKeyField": "partnerUrl"
+  }
+}
