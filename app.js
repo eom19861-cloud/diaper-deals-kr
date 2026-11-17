@@ -207,7 +207,7 @@ function cardEl(item, isBest) {
   meta.className = 'card__note';
   meta.style.marginTop = '8px';
   meta.style.color = 'var(--ink-faint)';
-  meta.textContent = `${item.seller || '판매처'}${String(item.seller || '').endsWith('최저가') ? '' : ' 최저가'} · ${fmtDate(item.checkedAt)} 확인`;
+  meta.textContent = `${item.seller || '판매처'} 기준 · ${fmtDate(item.checkedAt)} 확인`;
   li.appendChild(meta);
 
   return li;
