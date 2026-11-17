@@ -1,4 +1,4 @@
-/* 기저귀·물티슈 1매당 최저가 비교
+/* 기저귀·물티슈 1매당 최저가 비교 (쿠팡 기준)
  * 데이터는 fetch('data/products.json') 하나에서만 읽습니다.
  * 가격을 갱신할 때는 products.json의 items와 updatedAt만 바꾸면 됩니다. */
 
@@ -197,7 +197,7 @@ function cardEl(item, isBest) {
   buy.href = buyHref(item);
   buy.target = '_blank';
   buy.rel = config.partnersEnabled && item.partnerUrl ? 'sponsored noopener noreferrer' : 'noopener noreferrer';
-  buy.textContent = config.buyButtonLabel || '구매하러 가기';
+  buy.textContent = config.buyButtonLabel || '쿠팡에서 보기';
   if (item.seller) buy.title = `${item.seller}에서 보기`;
   foot.appendChild(buy);
 
@@ -226,7 +226,7 @@ function render() {
   });
 
   $('emptyState').hidden = list.length > 0;
-  $('resultCount').textContent = `${CATEGORY_LABEL[state.category]} ${list.length}개 상품 · 1매당 낮은 순으로 비교`;
+  $('resultCount').textContent = `쿠팡 ${CATEGORY_LABEL[state.category]} ${list.length}개 상품 · 1매당 낮은 순으로 비교`;
 }
 
 /* ---------- calculator ---------- */
@@ -294,7 +294,7 @@ function renderCalc() {
       verdict.textContent = `목록 최저가(${won(stats.best)}원/매)보다 ${won(diffBest)}원 비쌉니다. 대용량 구성이 더 쌀 수 있어요.`;
     }
     box.appendChild(verdict);
-    basis.textContent = `비교 기준: ${CATEGORY_LABEL[category]} ${stats.count}개 상품의 1매당 가격 · 최저 ${won(stats.best)}원 / 평균 ${won(stats.avg)}원`;
+    basis.textContent = `비교 기준: 쿠팡 ${CATEGORY_LABEL[category]} ${stats.count}개 상품의 1매당 가격 · 최저 ${won(stats.best)}원 / 평균 ${won(stats.avg)}원`;
   }
 }
 

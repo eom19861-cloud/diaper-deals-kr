@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>기저귀·물티슈 단가 비교</title>
-<meta name="description" content="기저귀와 아기 물티슈를 1매당 가격으로 비교하는 최저가 계산기. 같은 돈이면 몇 매를 사는지 한눈에 봅니다." />
+<title>기저귀·물티슈 쿠팡 단가 비교</title>
+<meta name="description" content="쿠팡에서 파는 기저귀와 아기 물티슈를 1매당 가격으로 비교하는 계산기. 같은 돈이면 몇 매를 사는지 한눈에 봅니다." />
 <meta name="theme-color" content="#1f7a5a" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B7%3C/text%3E%3C/svg%3E" />
 <link rel="stylesheet" href="styles.css" />
@@ -12,9 +12,9 @@
 <body>
 <div class="wrap">
   <header class="hero">
-    <p class="hero__eyebrow">1매당 단가로 비교</p>
-    <h1 class="hero__title">기저귀·물티슈<br />최저가 계산기</h1>
-    <p class="hero__desc">같은 돈이면 몇 매를 사는지 — 총 가격이 아니라 <strong>1매당 가격</strong>으로 비교하세요.</p>
+    <p class="hero__eyebrow">쿠팡 기준 1매당 최저가 비교</p>
+    <h1 class="hero__title">기저귀·물티슈<br />쿠팡 단가 계산기</h1>
+    <p class="hero__desc">쿠팡에서 파는 상품만 모았습니다. 같은 돈이면 몇 매를 사는지 — 총 가격이 아니라 <strong>1매당 가격</strong>으로 비교하세요.</p>
     <div class="hero__meta">
       <span class="dot" aria-hidden="true"></span>
       <span id="updatedAt">불러오는 중…</span>
@@ -69,7 +69,7 @@
 
   <section id="calcView" class="calc" hidden>
     <h2 class="calc__title">직접 단가 계산기</h2>
-    <p class="calc__desc">마트에서 본 가격이나 장바구니에 담은 상품이 싼지 바로 확인하세요.</p>
+    <p class="calc__desc">마트에서 본 가격이나 쿠팡 장바구니에 담은 상품이 싼지 바로 확인하세요.</p>
 
     <div class="calc__form">
       <label class="field field--wide">
@@ -101,7 +101,7 @@
 
   <footer class="foot">
     <ul id="footNotes" class="foot__notes"></ul>
-    <p class="foot__src">데이터 <code>data/products.json</code> · 설정 <code>data/config.json</code></p>
+    <p class="foot__src">쿠팡 기준 · 데이터 <code>data/products.json</code> · 설정 <code>data/config.json</code></p>
   </footer>
 </div>
 <script src="app.js" defer></script>
