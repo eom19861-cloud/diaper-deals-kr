@@ -932,7 +932,7 @@ body {
   text-align: left;
 }
 .prose th, .prose td { padding: 9px 11px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-.prose thead th { background: #f6faf7; color: var(--ink-soft); font-size: 11.5px; font-weight: 800; white-space: nowrap; }
+.prose thead th { background: #f6faf7; color: var(--ink-soft); font-size: 11.5px; font-weight: 800; line-height: 1.45; }
 .prose tbody tr:last-child td { border-bottom: 0; }
 .prose td b, .prose td strong { font-variant-numeric: tabular-nums; }
 .prose .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -1106,6 +1106,12 @@ body {
   .toc { padding: 15px 18px; }
   .toc ol { columns: 2; column-gap: 22px; }
   .related ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .prose table { font-size: 12px; }
+  .prose th, .prose td { padding: 8px 9px; }
+  .page-head__title { font-size: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
