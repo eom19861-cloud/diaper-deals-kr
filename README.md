@@ -15,15 +15,28 @@
 ## 구조
 
 ```
-index.html          화면 골격 (SEO·Open Graph·JSON-LD 메타 포함)
-styles.css          모바일 퍼스트 스타일
-app.js              데이터 로딩·필터·정렬·단가 계산
-data/products.json  상품 데이터 (매일 이 파일만 교체)
-data/config.json    사이트 문구·파트너스 설정
-og-image.png        공유 미리보기 이미지 (1200×630)
-robots.txt          검색 로봇 허용 + sitemap 위치
-sitemap.xml         색인할 URL 목록
+index.html                      화면 골격 (SEO·Open Graph·JSON-LD 메타 포함)
+styles.css                      모바일 퍼스트 스타일 (내비·가이드·표 공통 스타일 포함)
+app.js                          데이터 로딩·필터·정렬·단가 계산
+data/products.json              상품 데이터 (매일 이 파일만 교체)
+data/config.json                사이트 문구·파트너스 설정
+og-image.png                    공유 미리보기 이미지 (1200×630)
+robots.txt                      검색 로봇 허용 + sitemap 위치
+sitemap.xml                     색인할 URL 목록
+guides/index.html               가이드 목록 허브
+guides/diaper-stage-guide.html  기저귀 단계·팬티형 전환·사이즈업 신호
+guides/unit-price-guide.html    1매당 단가 계산법·특가 판별
+guides/baby-wipes-guide.html    물티슈 평량·원단·구성별 단가
+guides/diaper-stock-guide.html  대량 구매·적정 재고·보관
+about.html                      사이트 소개(가격 기준·갱신 방식·문의)
+privacy.html                    개인정보처리방침(광고 쿠키·쿠팡 파트너스 고지)
 ```
+
+## 공통 내비게이션·푸터
+
+모든 페이지 상단에 `.site-head`(브랜드 + 단가 계산 / 육아 가이드 / 사이트 소개), 하단에 `.foot__links`(단가 계산 · 육아 가이드 · 사이트 소개 · 개인정보처리방침)를 같은 마크업으로 넣었습니다. 새 페이지를 추가할 때는 이 두 블록을 그대로 복사하고 링크 경로와 `aria-current`만 맞추면 됩니다. 페이지 안의 링크는 `/guides/...`처럼 루트 기준 절대 경로를 씁니다(로컬 확인도 저장소 루트에서 서버를 띄워야 링크가 맞습니다).
+
+가이드 글은 `<div class="prose">`로 본문을 감싸면 표·체크리스트·강조 박스 스타일이 적용됩니다. 회사·개인 연락처는 이메일 한 개만 노출하고, 전화번호나 주소는 넣지 않습니다.
 
 ## 매일 갱신하는 법
 
@@ -76,7 +89,7 @@ sitemap.xml         색인할 URL 목록
 
 - 공유 카드: `og-image.png`(1200×630)가 `https://diaper-deals-kr.vercel.app/og-image.png`로 서빙됩니다. 문구를 바꿀 때는 이미지를 같은 크기로 다시 만들어 루트에 두세요.
 - `robots.txt`: 모든 로봇 허용 + `Sitemap: https://diaper-deals-kr.vercel.app/sitemap.xml`
-- `sitemap.xml`: 현재 URL 1개. 상품 상세 페이지가 생기면 `<url>`을 추가하세요.
+- `sitemap.xml`: 메인 + 가이드 5개(허브 포함) + about/privacy, 총 8개 URL. 페이지를 추가하면 `<url>`을 함께 추가하세요.
 - 네이버 서치어드바이저·구글 서치 콘솔에는 **사이트 URL** `https://diaper-deals-kr.vercel.app/`, **사이트맵** `https://diaper-deals-kr.vercel.app/sitemap.xml`을 넣으면 됩니다. (네이버는 소유 확인 메타태그를 받으면 `<head>`에 추가)
 
 ## 로컬에서 보기

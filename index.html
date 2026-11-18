@@ -63,6 +63,15 @@
 </head>
 <body>
 <div class="wrap">
+  <header class="site-head">
+    <a class="site-head__brand" href="/"><span aria-hidden="true">🧷</span><span>기저귀·물티슈 단가 비교</span></a>
+    <nav class="site-head__links" aria-label="주요 메뉴">
+      <a href="/" aria-current="page">단가 계산</a>
+      <a href="/guides/">육아 가이드</a>
+      <a href="/about.html">사이트 소개</a>
+    </nav>
+  </header>
+
   <header class="hero">
     <p class="hero__eyebrow">쿠팡 기준 1매당 최저가 비교</p>
     <h1 class="hero__title">기저귀·물티슈<br />쿠팡 단가 계산기</h1>
@@ -175,9 +184,27 @@
     <p id="emptyState" class="empty" hidden>조건에 맞는 상품이 없습니다. 필터를 바꿔 보세요.</p>
   </section>
 
+  <section class="guide-strip" aria-labelledby="guideStripTitle">
+    <h2 class="guide-strip__title" id="guideStripTitle">처음 사신다면, 이 4편만 읽어보세요</h2>
+    <p class="guide-strip__desc">단계·단가·물티슈·재고를 표와 체크리스트로 정리했습니다.</p>
+    <ul class="guide-strip__list">
+      <li><a href="/guides/diaper-stage-guide.html">기저귀 단계별 고르는 법</a></li>
+      <li><a href="/guides/unit-price-guide.html">1매당 단가 계산과 진짜 특가 판별</a></li>
+      <li><a href="/guides/baby-wipes-guide.html">아기 물티슈 평량·원단 고르는 법</a></li>
+      <li><a href="/guides/diaper-stock-guide.html">대량 구매와 적정 재고 계산</a></li>
+    </ul>
+  </section>
+
   <footer class="foot">
     <ul id="footNotes" class="foot__notes"></ul>
     <p class="foot__src">쿠팡 기준 · 데이터 <code>data/products.json</code> · 설정 <code>data/config.json</code></p>
+    <nav class="foot__links" aria-label="사이트 정보">
+      <a href="/">단가 계산</a><span>·</span>
+      <a href="/guides/">육아 가이드</a><span>·</span>
+      <a href="/about.html">사이트 소개</a><span>·</span>
+      <a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+    <p class="foot__copy"><strong>기저귀·물티슈 쿠팡 단가 비교</strong> · 쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 받습니다. 가격은 쿠팡 판매가 기준이며 실제 결제 금액과 다를 수 있습니다.</p>
   </footer>
 </div>
 <script src="app.js" defer></script>
