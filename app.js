@@ -19,6 +19,8 @@ const state = {
 let products = [];
 let items = [];
 let config = {};
+let calcMode = 'packs';   // 'packs' = 팩당 매수 × 팩 수, 'total' = 총 매수 직접 입력
+let calcOpen = false;
 
 const $ = (id) => document.getElementById(id);
 
@@ -261,40 +263,100 @@ function render() {
 
   $('emptyState').hidden = list.length > 0;
   $('resultCount').textContent = `쿠팡 ${CATEGORY_LABEL[state.category]} ${list.length}개 상품 · 1매당 낮은 순으로 비교`;
+
+  renderCalcPeek();
+  renderCalc();
 }
 
 /* ---------- calculator ---------- */
-function categoryStats(category) {
-  const list = items.filter((i) => i.category === category);
+/* 비교 기준은 화면에 보이는 현재 목록(필터 적용 후)이고,
+ * 필터 결과가 비면 같은 카테고리 전체를 기준으로 삼습니다. */
+function calcStats() {
+  const filtered = filteredItems();
+  const useFiltered = filtered.length > 0;
+  const list = useFiltered ? filtered : currentItems();
   if (!list.length) return null;
-  const units = list.map(unitPriceOf).sort((a, b) => a - b);
+  const units = list.map(unitPriceOf).filter((v) => Number.isFinite(v)).sort((a, b) => a - b);
+  if (!units.length) return null;
   const best = units[0];
   const avg = units.reduce((s, v) => s + v, 0) / units.length;
-  const mid = units[Math.floor(units.length / 2)];
-  return { best, avg, mid, count: units.length };
+  return {
+    best,
+    avg,
+    count: units.length,
+    scoped: useFiltered,
+    label: CATEGORY_LABEL[state.category]
+  };
+}
+
+function renderCalcPeek() {
+  const peek = $('calcPeek');
+  if (!peek) return;
+  const stats = calcStats();
+  if (!stats) {
+    peek.textContent = '마트 가격도 3초 만에 비교';
+    return;
+  }
+  peek.textContent = `${stats.label} 최저 ${won(stats.best)}원/매 · 평균 ${won(stats.avg)}원/매`;
+}
+
+function setCalcMode(mode) {
+  calcMode = mode === 'total' ? 'total' : 'packs';
+  document.querySelectorAll('.calc__mode-btn').forEach((btn) => {
+    const on = btn.dataset.mode === calcMode;
+    btn.classList.toggle('is-active', on);
+    btn.setAttribute('aria-pressed', String(on));
+  });
+  $('calcPackFields').hidden = calcMode !== 'packs';
+  $('calcTotalField').hidden = calcMode !== 'total';
+  renderCalc();
+}
+
+function setCalcOpen(open) {
+  calcOpen = Boolean(open);
+  $('calcBody').hidden = !calcOpen;
+  $('calcToggle').setAttribute('aria-expanded', String(calcOpen));
+  $('calcPanel').classList.toggle('is-open', calcOpen);
+  if (calcOpen) renderCalc();
 }
 
 function renderCalc() {
   const box = $('calcResult');
   const basis = $('calcBasis');
+  if (!box) return;
   box.textContent = '';
 
   const price = Number($('calcPrice').value);
-  const perPack = Number($('calcPerPack').value);
-  const packCount = Number($('calcPackCount').value || 1);
-  const category = $('calcCategory').value;
-  const stats = categoryStats(category);
+  const stats = calcStats();
 
-  if (!price || !perPack || !packCount) {
+  let totalCount = 0;
+  let formula = '';
+
+  if (calcMode === 'total') {
+    totalCount = Number($('calcTotalCount').value);
+    formula = `${won(price)}원 ÷ ${won(totalCount)}매`;
+  } else {
+    const perPack = Number($('calcPerPack').value);
+    const packCount = Number($('calcPackCount').value || 1);
+    totalCount = perPack * packCount;
+    formula = `${won(price)}원 ÷ ${won(totalCount)}매 (${won(perPack)}매 × ${won(packCount)}팩)`;
+  }
+
+  const ready = Number.isFinite(price) && Number.isFinite(totalCount) && price > 0 && totalCount > 0;
+
+  if (!ready) {
     const hint = document.createElement('p');
     hint.className = 'calc__hint';
-    hint.textContent = '금액과 매수를 입력하면 1매당 가격과 비교 결과가 나옵니다.';
+    hint.textContent = calcMode === 'total'
+      ? '결제 금액과 총 매수를 입력하면 1매당 가격이 나옵니다.'
+      : '결제 금액과 팩당 매수를 입력하면 1매당 가격이 나옵니다.';
     box.appendChild(hint);
-    basis.textContent = '';
+    basis.textContent = stats
+      ? `${stats.scoped ? '현재 목록' : `쿠팡 ${stats.label} 전체`} ${stats.count}개 상품 기준 · 최저 ${won(stats.best)}원/매 · 평균 ${won(stats.avg)}원/매`
+      : '';
     return;
   }
 
-  const totalCount = perPack * packCount;
   const unit = price / totalCount;
 
   const line = document.createElement('p');
@@ -308,27 +370,59 @@ function renderCalc() {
 
   const detail = document.createElement('p');
   detail.className = 'calc__line';
-  detail.textContent = `${won(price)}원 ÷ ${won(totalCount)}매 (${perPack}매 × ${packCount}팩)`;
+  detail.textContent = `${formula} · 총 ${won(totalCount)}매`;
   box.appendChild(detail);
 
   if (stats) {
-    const verdict = document.createElement('p');
+    const cmp = document.createElement('div');
+    cmp.className = 'calc__compare';
+
+    const mine = document.createElement('div');
+    mine.className = 'calc__cmp calc__cmp--mine';
+    const mineLabel = document.createElement('span');
+    mineLabel.textContent = '내 단가';
+    const mineValue = document.createElement('b');
+    mineValue.textContent = `${won(unit)}원`;
+    mine.append(mineLabel, mineValue);
+
+    const best = document.createElement('div');
+    best.className = 'calc__cmp calc__cmp--best';
+    const bestLabel = document.createElement('span');
+    bestLabel.textContent = '목록 최저';
+    const bestValue = document.createElement('b');
+    bestValue.textContent = `${won(stats.best)}원`;
+    best.append(bestLabel, bestValue);
+
+    const avg = document.createElement('div');
+    avg.className = 'calc__cmp calc__cmp--avg';
+    const avgLabel = document.createElement('span');
+    avgLabel.textContent = '목록 평균';
+    const avgValue = document.createElement('b');
+    avgValue.textContent = `${won(stats.avg)}원`;
+    avg.append(avgLabel, avgValue);
+
+    cmp.append(mine, best, avg);
+    box.appendChild(cmp);
+
     const diffBest = unit - stats.best;
+    const diffAvg = unit - stats.avg;
+    const verdict = document.createElement('p');
     if (unit <= stats.best) {
       verdict.className = 'calc__verdict calc__verdict--good';
-      verdict.textContent = `${CATEGORY_LABEL[category]} 목록 최저가(${won(stats.best)}원/매)보다 쌉니다. 지금 사기 좋아요.`;
-    } else if (unit <= stats.mid) {
+      verdict.textContent = `목록 최저가(${won(stats.best)}원/매)와 같거나 더 쌉니다. 지금 사기 좋아요.`;
+    } else if (diffAvg <= 0) {
       verdict.className = 'calc__verdict calc__verdict--good';
-      verdict.textContent = `${CATEGORY_LABEL[category]} 평균(${won(stats.avg)}원/매)보다 저렴합니다. 최저가보다는 ${won(diffBest)}원 비쌉니다.`;
-    } else if (unit <= stats.avg) {
+      verdict.textContent = `평균(${won(stats.avg)}원/매)보다 ${won(-diffAvg)}원 저렴합니다. 최저가보다는 ${won(diffBest)}원 비쌉니다.`;
+    } else if (unit <= stats.avg * 1.15) {
       verdict.className = 'calc__verdict calc__verdict--even';
-      verdict.textContent = `평균 수준입니다. 목록 최저가보다 ${won(diffBest)}원 비싸니 묶음 구성을 한 번 더 보세요.`;
+      verdict.textContent = `평균보다 ${won(diffAvg)}원 비쌉니다. 묶음 구성을 한 번 더 보세요.`;
     } else {
       verdict.className = 'calc__verdict calc__verdict--bad';
-      verdict.textContent = `목록 최저가(${won(stats.best)}원/매)보다 ${won(diffBest)}원 비쌉니다. 대용량 구성이 더 쌀 수 있어요.`;
+      verdict.textContent = `평균보다 ${won(diffAvg)}원, 최저가보다 ${won(diffBest)}원 비쌉니다. 대용량 구성이 더 쌀 수 있어요.`;
     }
     box.appendChild(verdict);
-    basis.textContent = `비교 기준: 쿠팡 ${CATEGORY_LABEL[category]} ${stats.count}개 상품의 1매당 가격 · 최저 ${won(stats.best)}원 / 평균 ${won(stats.avg)}원`;
+
+    basis.textContent = `비교 기준: ${stats.scoped ? '현재 목록' : `쿠팡 ${stats.label} 전체`} ${stats.count}개 상품의 1매당 가격 · 최저 ${won(stats.best)}원 / 평균 ${won(stats.avg)}원 · 1매당 가격 = (상품가 + 배송비) ÷ 총 매수`;
   }
 }
 
@@ -341,14 +435,6 @@ function setCategory(category) {
     tab.setAttribute('aria-selected', String(on));
   });
 
-  const isCalc = category === 'calc';
-  $('listView').hidden = isCalc;
-  $('calcView').hidden = !isCalc;
-
-  if (isCalc) {
-    renderCalc();
-    return;
-  }
   resetFilterState();
   populateFilters();
   render();
@@ -372,7 +458,12 @@ function wire() {
     render();
   });
 
-  ['calcPrice', 'calcPerPack', 'calcPackCount', 'calcCategory'].forEach((id) => {
+  $('calcToggle').addEventListener('click', () => setCalcOpen(!calcOpen));
+  document.querySelectorAll('.calc__mode-btn').forEach((btn) => {
+    btn.addEventListener('click', () => setCalcMode(btn.dataset.mode));
+  });
+
+  ['calcPrice', 'calcPerPack', 'calcPackCount', 'calcTotalCount'].forEach((id) => {
     $(id).addEventListener('input', renderCalc);
     $(id).addEventListener('change', renderCalc);
   });
@@ -412,6 +503,13 @@ async function boot() {
 
     wire();
     setCategory('diaper');
+    setCalcMode('packs');
+
+    /* 예전 '직접 계산기' 탭 링크(#calc)로 들어와도 계산기가 펼쳐지게 합니다. */
+    if (location.hash === '#calc') {
+      setCalcOpen(true);
+      $('calcPanel').scrollIntoView({ block: 'nearest' });
+    }
   } catch (err) {
     $('updatedAt').textContent = '데이터를 불러오지 못했습니다';
     $('emptyState').hidden = false;

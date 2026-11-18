@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 이미지·검색 미리보기는 모두 허용
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://diaper-deals-kr.vercel.app/sitemap.xml

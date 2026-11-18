@@ -3,7 +3,9 @@
 쿠팡에서 파는 상품만 모아 — 같은 돈이면 몇 매를 사는지 — 기저귀와 아기 물티슈를 **1매당 가격**으로 비교하는 정적 웹앱입니다.
 빌드 과정이 없어서 GitHub에 올린 그대로 Vercel에서 서빙됩니다.
 
-- 카테고리: 기저귀 / 아기 물티슈 / 직접 단가 계산기
+- 카테고리: 기저귀 / 아기 물티슈
+- 1매당 단가 계산기: 목록 위 접기/펼치기 패널. 가격·팩당 매수·팩 수(기본 1) 또는 총 매수를 넣으면 1매당 가격을 계산해 **현재 목록의 최저·평균 단가와 나란히** 비교합니다
+- 검색·공유: `<title>`·description·keywords·canonical·Open Graph(`og-image.png` 1200×630)·Twitter 카드·JSON-LD(`WebApplication`)·`robots.txt`·`sitemap.xml`
 - 데이터: `data/products.json`의 모든 품목이 **쿠팡 판매가·쿠팡 링크** 기준입니다
 - 필터: 기저귀(브랜드·단계·팬티형/밴드형), 물티슈(브랜드·캡형/리필형)
 - 정렬: **1매당 최저가순(기본)**, 총 구매가순, 최신 갱신순
@@ -13,11 +15,14 @@
 ## 구조
 
 ```
-index.html          화면 골격
+index.html          화면 골격 (SEO·Open Graph·JSON-LD 메타 포함)
 styles.css          모바일 퍼스트 스타일
 app.js              데이터 로딩·필터·정렬·단가 계산
 data/products.json  상품 데이터 (매일 이 파일만 교체)
 data/config.json    사이트 문구·파트너스 설정
+og-image.png        공유 미리보기 이미지 (1200×630)
+robots.txt          검색 로봇 허용 + sitemap 위치
+sitemap.xml         색인할 URL 목록
 ```
 
 ## 매일 갱신하는 법
@@ -66,6 +71,13 @@ data/config.json    사이트 문구·파트너스 설정
 
 > 쿠팡파트너스는 제휴 링크로 발생한 구매에 수수료를 지급하며, 고지 문구 노출이 필수입니다.
 > 가격·재고는 파트너스 API 약관상 별도 계약이 필요할 수 있으니, 자동 수집 전에 약관을 확인하세요.
+
+## 검색 등록(SEO) · 공유 미리보기
+
+- 공유 카드: `og-image.png`(1200×630)가 `https://diaper-deals-kr.vercel.app/og-image.png`로 서빙됩니다. 문구를 바꿀 때는 이미지를 같은 크기로 다시 만들어 루트에 두세요.
+- `robots.txt`: 모든 로봇 허용 + `Sitemap: https://diaper-deals-kr.vercel.app/sitemap.xml`
+- `sitemap.xml`: 현재 URL 1개. 상품 상세 페이지가 생기면 `<url>`을 추가하세요.
+- 네이버 서치어드바이저·구글 서치 콘솔에는 **사이트 URL** `https://diaper-deals-kr.vercel.app/`, **사이트맵** `https://diaper-deals-kr.vercel.app/sitemap.xml`을 넣으면 됩니다. (네이버는 소유 확인 메타태그를 받으면 `<head>`에 추가)
 
 ## 로컬에서 보기
 

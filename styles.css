@@ -97,7 +97,7 @@ body {
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 4px;
   margin: 0 -2px 14px;
   padding: 4px;
@@ -209,11 +209,14 @@ body {
 .input {
   appearance: auto;
   padding: 11px;
+  background-image: none;
   cursor: text;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
-.select:focus-visible, .input:focus-visible, .tab:focus-visible, .buy:focus-visible, .link:focus-visible {
+.select:focus-visible, .input:focus-visible, .tab:focus-visible, .buy:focus-visible, .link:focus-visible,
+.calc__toggle:focus-visible, .calc__mode-btn:focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
@@ -432,39 +435,142 @@ body {
   font-size: 13.5px;
 }
 
-/* ---------- calculator ---------- */
+/* ---------- calculator (접기/펼치기 패널) ---------- */
 .calc {
+  margin-bottom: 14px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px 15px 16px;
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.calc__title {
-  margin: 0 0 6px;
+.calc__toggle {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.calc.is-open .calc__toggle { background: #f7faf8; }
+
+.calc__icon {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--brand-tint);
+  display: grid;
+  place-items: center;
   font-size: 18px;
-  letter-spacing: -.02em;
+  line-height: 1;
 }
 
-.calc__desc {
-  margin: 0 0 14px;
+.calc__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.calc__kicker {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.calc__toggle:hover .calc__kicker { color: var(--brand-deep); }
+
+.calc__peek {
+  font-size: 12px;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calc__chev {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  margin: -5px 5px 0 0;
+  border-right: 2px solid var(--ink-faint);
+  border-bottom: 2px solid var(--ink-faint);
+  transform: rotate(45deg);
+  transition: transform .18s ease, margin .18s ease;
+}
+
+.calc.is-open .calc__chev {
+  transform: rotate(-135deg);
+  margin-top: 5px;
+}
+
+.calc__body {
+  padding: 13px 14px 14px;
+  border-top: 1px solid var(--line);
+  background: #fcfdfc;
 }
 
 .calc__form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 9px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+}
+
+.calc__modes {
+  grid-column: span 2;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 2px;
+  border-radius: 11px;
+  background: #eef2ef;
+}
+
+.calc__mode-btn {
+  flex: 1;
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 7px 4px;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+
+.calc__mode-btn.is-active {
+  background: #fff;
+  color: var(--brand-deep);
+  box-shadow: 0 1px 2px rgba(20, 32, 27, .09);
+}
+
+.calc__pairs {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
 }
 
 .calc__result {
   border-radius: 14px;
-  background: #f7faf8;
+  background: #fff;
   border: 1px solid var(--line);
-  padding: 15px;
+  padding: 14px;
 }
 
 .calc__hint {
@@ -497,6 +603,46 @@ body {
   color: var(--ink-soft);
   font-variant-numeric: tabular-nums;
 }
+
+.calc__compare {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.calc__cmp {
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #fbfcfb;
+}
+
+.calc__cmp span {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-faint);
+  letter-spacing: -.01em;
+}
+
+.calc__cmp b {
+  display: block;
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.025em;
+  font-variant-numeric: tabular-nums;
+}
+
+.calc__cmp--mine {
+  background: var(--brand-tint);
+  border-color: #bfe3cf;
+}
+
+.calc__cmp--mine b { color: var(--brand-deep); }
+.calc__cmp--best b { color: #0d7a4d; }
+.calc__cmp--avg b { color: var(--ink-soft); }
 
 .calc__verdict {
   margin: 9px 0 0;

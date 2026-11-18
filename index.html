@@ -3,11 +3,61 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>기저귀·물티슈 쿠팡 단가 비교</title>
-<meta name="description" content="쿠팡에서 파는 기저귀와 아기 물티슈를 1매당 가격으로 비교하는 계산기. 같은 돈이면 몇 매를 사는지 한눈에 봅니다." />
+<title>기저귀·물티슈 1매당 단가 계산기 | 쿠팡 최저가 비교</title>
+<meta name="description" content="쿠팡 기저귀·아기 물티슈 24개 상품을 1매당 가격으로 비교합니다. 마트 가격이나 장바구니 금액과 매수를 넣으면 1매당 단가를 바로 계산해 목록 최저가·평균과 견줘 보여 줍니다." />
+<meta name="keywords" content="기저귀 단가 계산기, 기저귀 1매당 가격, 물티슈 단가 계산, 기저귀 최저가 비교, 쿠팡 기저귀 가격, 킨도 오슬림, 하기스, 팸퍼스, 아기 물티슈 가격" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#1f7a5a" />
+<link rel="canonical" href="https://diaper-deals-kr.vercel.app/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="기저귀·물티슈 쿠팡 단가 비교" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="기저귀·물티슈 1매당 단가 계산기 | 쿠팡 최저가 비교" />
+<meta property="og:description" content="쿠팡 기저귀·아기 물티슈를 1매당 가격으로 비교하고, 마트 가격도 1매당 단가로 바로 계산해 최저가·평균과 견줘 보세요." />
+<meta property="og:url" content="https://diaper-deals-kr.vercel.app/" />
+<meta property="og:image" content="https://diaper-deals-kr.vercel.app/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="기저귀·물티슈 1매당 단가 계산기 미리보기" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="기저귀·물티슈 1매당 단가 계산기 | 쿠팡 최저가 비교" />
+<meta name="twitter:description" content="쿠팡 기저귀·아기 물티슈를 1매당 가격으로 비교하고, 마트 가격도 1매당 단가로 바로 계산해 보세요." />
+<meta name="twitter:image" content="https://diaper-deals-kr.vercel.app/og-image.png" />
+<meta name="twitter:image:alt" content="기저귀·물티슈 1매당 단가 계산기 미리보기" />
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B7%3C/text%3E%3C/svg%3E" />
 <link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "기저귀·물티슈 1매당 단가 계산기",
+  "alternateName": "기저귀·물티슈 쿠팡 단가 비교",
+  "url": "https://diaper-deals-kr.vercel.app/",
+  "description": "쿠팡에서 파는 기저귀와 아기 물티슈를 1매당 가격으로 비교하고, 마트 가격이나 장바구니 금액을 1매당 단가로 계산해 목록 최저가·평균과 견주는 웹 계산기입니다.",
+  "image": "https://diaper-deals-kr.vercel.app/og-image.png",
+  "applicationCategory": "UtilitiesApplication",
+  "applicationSubCategory": "가격 비교 · 단가 계산",
+  "operatingSystem": "Web (모바일·데스크톱)",
+  "browserRequirements": "JavaScript",
+  "inLanguage": "ko-KR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "featureList": [
+    "기저귀·아기 물티슈 1매당 가격 비교",
+    "1매당 단가 직접 계산기",
+    "브랜드·단계·타입 필터와 1매당 최저가 정렬",
+    "쿠팡 상품 링크 연결과 쿠팡파트너스 고지"
+  ]
+}
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -26,10 +76,66 @@
   <nav class="tabs" role="tablist" aria-label="카테고리">
     <button class="tab is-active" role="tab" aria-selected="true" data-category="diaper">기저귀</button>
     <button class="tab" role="tab" aria-selected="false" data-category="wipe">아기 물티슈</button>
-    <button class="tab" role="tab" aria-selected="false" data-category="calc">직접 계산기</button>
   </nav>
 
   <section id="listView">
+    <section class="calc" id="calcPanel" aria-labelledby="calcKicker">
+      <button class="calc__toggle" id="calcToggle" type="button" aria-expanded="false" aria-controls="calcBody">
+        <span class="calc__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f5440" stroke-width="1.7" stroke-linecap="round">
+            <rect x="4" y="2.5" width="16" height="19" rx="3.2" />
+            <path d="M8 7.2h8" />
+            <circle cx="8.6" cy="11.8" r=".95" fill="#0f5440" stroke="none" />
+            <circle cx="12" cy="11.8" r=".95" fill="#0f5440" stroke="none" />
+            <circle cx="15.4" cy="11.8" r=".95" fill="#0f5440" stroke="none" />
+            <circle cx="8.6" cy="16.2" r=".95" fill="#0f5440" stroke="none" />
+            <circle cx="12" cy="16.2" r=".95" fill="#0f5440" stroke="none" />
+            <circle cx="15.4" cy="16.2" r=".95" fill="#0f5440" stroke="none" />
+          </svg>
+        </span>
+        <span class="calc__heading">
+          <span class="calc__kicker" id="calcKicker">1매당 단가 계산기</span>
+          <span class="calc__peek" id="calcPeek">마트 가격도 3초 만에 비교</span>
+        </span>
+        <span class="calc__chev" aria-hidden="true"></span>
+      </button>
+
+      <div class="calc__body" id="calcBody" hidden>
+        <div class="calc__form">
+          <label class="field field--wide">
+            <span class="field__label">총 결제 금액(원, 배송비 포함)</span>
+            <input id="calcPrice" class="input" type="number" inputmode="numeric" min="0" step="100" placeholder="예: 42900" />
+          </label>
+
+          <div class="calc__modes" role="group" aria-label="매수 입력 방식">
+            <button class="calc__mode-btn is-active" type="button" data-mode="packs" aria-pressed="true">팩으로 입력</button>
+            <button class="calc__mode-btn" type="button" data-mode="total" aria-pressed="false">총 매수로 입력</button>
+          </div>
+
+          <div class="calc__pairs" id="calcPackFields">
+            <label class="field">
+              <span class="field__label">팩당 매수</span>
+              <input id="calcPerPack" class="input" type="number" inputmode="numeric" min="1" step="1" placeholder="예: 30" />
+            </label>
+            <label class="field">
+              <span class="field__label">팩 수</span>
+              <input id="calcPackCount" class="input" type="number" inputmode="numeric" min="1" step="1" value="1" />
+            </label>
+          </div>
+
+          <label class="field field--wide" id="calcTotalField" hidden>
+            <span class="field__label">총 매수</span>
+            <input id="calcTotalCount" class="input" type="number" inputmode="numeric" min="1" step="1" placeholder="예: 120" />
+          </label>
+        </div>
+
+        <div class="calc__result" id="calcResult" aria-live="polite">
+          <p class="calc__hint">금액과 매수를 입력하면 1매당 가격과 비교 결과가 나옵니다.</p>
+        </div>
+        <p class="calc__basis" id="calcBasis"></p>
+      </div>
+    </section>
+
     <div class="filters" id="filters">
       <div class="filters__row">
         <label class="field">
@@ -65,38 +171,6 @@
 
     <ul id="cards" class="cards" aria-live="polite"></ul>
     <p id="emptyState" class="empty" hidden>조건에 맞는 상품이 없습니다. 필터를 바꿔 보세요.</p>
-  </section>
-
-  <section id="calcView" class="calc" hidden>
-    <h2 class="calc__title">직접 단가 계산기</h2>
-    <p class="calc__desc">마트에서 본 가격이나 쿠팡 장바구니에 담은 상품이 싼지 바로 확인하세요.</p>
-
-    <div class="calc__form">
-      <label class="field field--wide">
-        <span class="field__label">분류(비교 기준)</span>
-        <select id="calcCategory" class="select">
-          <option value="diaper">기저귀</option>
-          <option value="wipe">아기 물티슈</option>
-        </select>
-      </label>
-      <label class="field field--wide">
-        <span class="field__label">총 결제 금액(원, 배송비 포함)</span>
-        <input id="calcPrice" class="input" type="number" inputmode="numeric" min="0" step="100" placeholder="예: 42900" />
-      </label>
-      <label class="field">
-        <span class="field__label">팩당 매수</span>
-        <input id="calcPerPack" class="input" type="number" inputmode="numeric" min="1" step="1" placeholder="예: 36" />
-      </label>
-      <label class="field">
-        <span class="field__label">팩 수</span>
-        <input id="calcPackCount" class="input" type="number" inputmode="numeric" min="1" step="1" value="4" />
-      </label>
-    </div>
-
-    <div class="calc__result" id="calcResult" aria-live="polite">
-      <p class="calc__hint">금액과 매수를 입력하면 1매당 가격과 비교 결과가 나옵니다.</p>
-    </div>
-    <p class="calc__basis" id="calcBasis"></p>
   </section>
 
   <footer class="foot">
