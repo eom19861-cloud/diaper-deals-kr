@@ -409,7 +409,9 @@ function renderCalc() {
     const verdict = document.createElement('p');
     if (unit <= stats.best) {
       verdict.className = 'calc__verdict calc__verdict--good';
-      verdict.textContent = `목록 최저가(${won(stats.best)}원/매)와 같거나 더 쌉니다. 지금 사기 좋아요.`;
+      verdict.textContent = stats.best - unit >= 1
+        ? `목록 최저가(${won(stats.best)}원/매)보다 ${won(stats.best - unit)}원 더 쌉니다. 지금 사기 좋아요.`
+        : `목록 최저가(${won(stats.best)}원/매)와 같은 수준입니다. 지금 사기 좋아요.`;
     } else if (diffAvg <= 0) {
       verdict.className = 'calc__verdict calc__verdict--good';
       verdict.textContent = `평균(${won(stats.avg)}원/매)보다 ${won(-diffAvg)}원 저렴합니다. 최저가보다는 ${won(diffBest)}원 비쌉니다.`;
