@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T08:30:00+09:00",
+  "updatedAt": "2026-11-24T08:30:00+09:00",
   "dataNote": "쿠팡에서 판매 중인 상품의 공개 판매가를 기준으로 수집했습니다. 모든 가격·링크는 쿠팡 상품 페이지(또는 쿠팡 검색 결과)로 연결되며, 실제 결제 금액은 쿠폰·카드할인·와우회원 혜택에 따라 달라질 수 있습니다.",
   "items": [
     {
@@ -19,7 +19,7 @@
       "url": "https://www.coupang.com/vp/products/8034890802?itemId=25108790793&vendorItemId=92108761289",
       "partnerUrl": "https://link.coupang.com/a/iPs45N4fMO",
       "note": "7단계 특점보 17~21kg · 로켓배송 무료",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "kindo-guardians-7-single",
@@ -38,7 +38,7 @@
       "url": "https://www.coupang.com/vp/products/8034890802?itemId=25098814941&vendorItemId=92102342542",
       "partnerUrl": "https://link.coupang.com/a/iPvulE1EaW",
       "note": "낱팩 구매 시 40매 구성보다 1매당 190원 비쌈",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "kindo-guardians-5-box",
@@ -54,10 +54,10 @@
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
       "unitPrice": 599,
-      "url": "https://www.coupang.com/vp/products/8034890802",
+      "url": "https://www.coupang.com/vp/products/8034890802?itemId=21309130396",
       "partnerUrl": "https://link.coupang.com/a/iPvxnfMlTU",
       "note": "특대형 9~14kg · 로켓배송 무료 · 같은 상품 48매·144매도 1매당 599원",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "kindo-premium-slim-summer-6",
@@ -69,14 +69,14 @@
       "form": null,
       "packLabel": "30매 × 4팩 = 총 120매",
       "totalCount": 120,
-      "totalPrice": 60710,
+      "totalPrice": 61880,
       "shipping": 0,
       "seller": "쿠팡",
-      "unitPrice": 506,
+      "unitPrice": 516,
       "url": "https://www.coupang.com/np/search?q=%ED%82%A8%EB%8F%84%20%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%20%EC%98%A4%EC%8A%AC%EB%A6%BC%20%EC%8D%B8%EB%A8%B8%ED%8C%AC%ED%8B%B0%206%EB%8B%A8%EA%B3%84%20120%EB%A7%A4",
       "partnerUrl": "https://link.coupang.com/a/iPvLvG8roy",
       "note": "6단계 14~19kg · 무료배송",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "kindo-premium-oslim-band-4",
@@ -95,7 +95,7 @@
       "url": "https://www.coupang.com/vp/products/8722070643?itemId=11345795398",
       "partnerUrl": "https://link.coupang.com/a/iKULUAbtxk",
       "note": "대형(4단계) 밴드형 · 로켓배송 무료 · 역대 최저 45,000원",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "kindo-premium-bebeguard-summer-band-4",
@@ -107,14 +107,14 @@
       "form": null,
       "packLabel": "26매 × 6팩 = 총 156매",
       "totalCount": 156,
-      "totalPrice": 87960,
+      "totalPrice": 72760,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 564,
+      "unitPrice": 466,
       "url": "https://www.coupang.com/vp/products/9482857594?itemId=28696391733",
       "partnerUrl": "https://link.coupang.com/a/iMnhtg5DHw",
       "note": "대형 7~13kg · 로켓배송 무료 · 역대 최저 57,450원",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "huggies-maxdry-air-5",
@@ -133,7 +133,7 @@
       "url": "https://www.coupang.com/vp/products/8750574165?itemId=25062212302",
       "partnerUrl": "https://link.coupang.com/a/iPs6uYJRnM",
       "note": "특대형 12~17kg · 로켓배송 무료",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "huggies-maxdry-air-5-small",
@@ -145,14 +145,14 @@
       "form": null,
       "packLabel": "40매 × 2팩 = 총 80매",
       "totalCount": 80,
-      "totalPrice": 50900,
+      "totalPrice": 50520,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 636,
+      "unitPrice": 632,
       "url": "https://www.coupang.com/vp/products/8750574165?itemId=27985546769&vendorItemId=94943228487",
       "partnerUrl": "https://link.coupang.com/a/iPvAbm58H6",
-      "note": "같은 상품 160매 구성이 1매당 34원 저렴",
-      "checkedAt": "2026-11-23"
+      "note": "같은 상품 160매 구성이 1매당 30원 저렴",
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "huggies-maxdry-6",
@@ -190,7 +190,7 @@
       "url": "https://www.coupang.com/vp/products/8353195786",
       "partnerUrl": "https://link.coupang.com/a/iPsMO9OoBU",
       "note": "대형 9~13kg · 밴드형 중 최저 단가",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "huggies-naturemade-7",
@@ -202,14 +202,14 @@
       "form": null,
       "packLabel": "32매 × 2팩 = 총 64매",
       "totalCount": 64,
-      "totalPrice": 55180,
+      "totalPrice": 56950,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 862,
-      "url": "https://www.coupang.com/vp/products/9091715485",
+      "unitPrice": 890,
+      "url": "https://www.coupang.com/vp/products/8412759486?itemId=26719246361",
       "partnerUrl": "https://link.coupang.com/a/iPvFakvlxk",
-      "note": "7단계 특점보 · 프리미엄 라인이라 단가 높음",
-      "checkedAt": "2026-11-17"
+      "note": "7단계 특점보 남아용 · 프리미엄 라인이라 단가 높음",
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "pampers-babydry-extra-5",
@@ -228,7 +228,7 @@
       "url": "https://www.coupang.com/vp/products/7779133442",
       "partnerUrl": "https://link.coupang.com/a/iPs79TKvp6",
       "note": "특대형 12~17kg · 리뷰 5.8만건",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "mamypoko-hyperdry-5",
@@ -244,7 +244,7 @@
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
       "unitPrice": 420,
-      "url": "https://www.coupang.com/vp/products/8357741887",
+      "url": "https://www.coupang.com/vp/products/8357741887?itemId=26433573330",
       "partnerUrl": "https://link.coupang.com/a/iPs9HQYu3U",
       "note": "특대형 13~18kg · 102매(42,810원)와 1매당 동일(420원)",
       "checkedAt": "2026-11-22"
@@ -266,7 +266,7 @@
       "url": "https://www.coupang.com/vp/products/9179414905",
       "partnerUrl": "https://link.coupang.com/a/iPvH1ZYMg0",
       "note": "특대형 12~17kg · 로켓배송 무료",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "penelope-thin-air-7-boy",
@@ -285,7 +285,7 @@
       "url": "https://www.coupang.com/np/search?q=%ED%8E%98%EB%84%AC%EB%A1%9C%ED%8E%98%20%EC%94%AC%EC%94%AC%EC%94%AC%20%EC%97%90%EC%96%B4%EC%8A%AC%EB%A6%BC%20%ED%94%8C%EB%9F%AC%EC%8A%A4%20%ED%8C%AC%ED%8B%B0%207%EB%8B%A8%EA%B3%84",
       "partnerUrl": "https://link.coupang.com/a/iPvNjosCPY",
       "note": "7단계 특점보 · 쿠팡 검색 결과로 연결",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "penelope-miracle-allday-7",
@@ -301,10 +301,10 @@
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
       "unitPrice": 548,
-      "url": "https://www.coupang.com/np/search?q=%ED%8E%98%EB%84%AC%EB%A1%9C%ED%8E%98%20%EB%89%B4%20%EB%AF%B8%EB%9D%BC%ED%81%B4%20%EC%98%AC%EB%8D%B0%EC%9D%B4%20%ED%8C%AC%ED%8B%B0%207%EB%8B%A8%EA%B3%84",
+      "url": "https://www.coupang.com/vp/products/8733390582?itemId=25137554348",
       "partnerUrl": "https://link.coupang.com/a/iPvOPs0PwO",
-      "note": "7단계 · 쿠팡 검색 결과로 연결",
-      "checkedAt": "2026-11-17"
+      "note": "7단계 80매 구성 · 쿠팡 로켓배송",
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "bebesup-origin",
@@ -323,7 +323,7 @@
       "url": "https://www.coupang.com/np/search?q=%EB%B2%A0%EB%B2%A0%EC%88%B2%20%EC%98%A4%EB%A6%AC%EC%A7%84%20%EC%9C%A0%EC%95%84%EB%AC%BC%ED%8B%B0%EC%8A%88%20%EC%BA%A1%ED%98%95%20100%EB%A7%A4%2010%EA%B0%9C",
       "partnerUrl": "https://link.coupang.com/a/iPvQGOl21Q",
       "note": "50gsm · 정가 17,900원에서 25% 할인",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "bebesup-signature-blue",
@@ -335,14 +335,14 @@
       "form": "캡형",
       "packLabel": "70매 × 10팩 = 총 700매",
       "totalCount": 700,
-      "totalPrice": 24490,
+      "totalPrice": 24240,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
       "unitPrice": 35,
       "url": "https://www.coupang.com/vp/products/6532149469",
       "partnerUrl": "https://link.coupang.com/a/iPtbd2kbsW",
       "note": "75gsm · 리뷰 11.8만건 · 로켓배송 무료",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "bebesup-signature-with-green",
@@ -354,14 +354,14 @@
       "form": "캡형",
       "packLabel": "70매 × 10팩 = 총 700매",
       "totalCount": 700,
-      "totalPrice": 16990,
+      "totalPrice": 16460,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
       "unitPrice": 24,
       "url": "https://www.coupang.com/vp/products/7904856969",
       "partnerUrl": "https://link.coupang.com/a/iPsQ5rdh36",
-      "note": "70gsm 엠보싱 · 정가 22,900원에서 25% 할인",
-      "checkedAt": "2026-11-23"
+      "note": "70gsm 엠보싱 · 정가 22,900원에서 28% 할인",
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "bebeang-original-plus",
@@ -380,7 +380,7 @@
       "url": "https://www.coupang.com/np/search?q=%EB%B2%A0%EB%B2%A0%EC%95%99%20%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90%20%ED%94%8C%EB%9F%AC%EC%8A%A4%20%EC%9C%A0%EC%95%84%EB%AC%BC%ED%8B%B0%EC%8A%88%20%EC%BA%A1%ED%98%95%20100%EB%A7%A4%2010%EA%B0%9C",
       "partnerUrl": "https://link.coupang.com/a/iPvSqMP2gC",
       "note": "55gsm · 리뷰 36만건 · 정가 24,900원에서 48% 할인",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "comet-signature",
@@ -399,7 +399,7 @@
       "url": "https://www.coupang.com/np/search?q=%EC%BD%94%EB%A9%A7%20%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98%20%EC%95%84%EA%B8%B0%EB%AC%BC%ED%8B%B0%EC%8A%88%20%EC%97%A0%EB%B3%B4%EC%8B%B1%20%EC%BA%A1%ED%98%95%20100%EB%A7%A4%2010%EA%B0%9C",
       "partnerUrl": "https://link.coupang.com/a/iPvTRU4h3s",
       "note": "55gsm · 저자극 더마테스트 · 정가 23,900원에서 51% 할인",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "revens-purewater",
@@ -418,7 +418,7 @@
       "url": "https://www.coupang.com/np/search?q=%EB%A6%AC%EB%B2%A4%EC%8A%A4%20%ED%93%A8%EC%96%B4%EC%9B%8C%ED%84%B0%20%EC%95%84%EA%B8%B0%EB%AC%BC%ED%8B%B0%EC%8A%88%20%EC%97%A0%EB%B3%B4%EC%8B%B1%20%EC%BA%A1%ED%98%95%20100%EB%A7%A4%2010%EA%B0%9C",
       "partnerUrl": "https://link.coupang.com/a/iPvVTEkHIq",
       "note": "50gsm · 정가 18,900원에서 46% 할인",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "revens-signature-black",
@@ -437,7 +437,7 @@
       "url": "https://www.coupang.com/np/search?q=%EB%A6%AC%EB%B2%A4%EC%8A%A4%20%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98%20%EB%B8%94%EB%9E%99%EB%9D%BC%EB%B2%A8%20%EC%95%84%EA%B8%B0%20%EB%AC%BC%ED%8B%B0%EC%8A%88%20%EC%97%A0%EB%B3%B4%EC%8B%B1%20%EC%BA%A1%ED%98%95%2070%EB%A7%A4%2010%EA%B0%9C",
       "partnerUrl": "https://link.coupang.com/a/iPvX4PLHr2",
       "note": "70gsm 도톰한 엠보싱 · 정가 14,900원에서 24% 할인",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "bluna-bon-pure",
@@ -456,7 +456,7 @@
       "url": "https://www.coupang.com/np/search?q=%EB%B8%94%EB%A3%A8%EB%82%98%20%EB%B3%B8%20%ED%93%A8%EC%96%B4%20%EC%A0%80%EC%9E%90%EA%B7%B9%20%EB%AC%BC%ED%8B%B0%EC%8A%88%20%EC%BA%A1%ED%98%95%20100%EB%A7%A4%2010%EA%B0%9C",
       "partnerUrl": "https://link.coupang.com/a/iPvZZHgHpA",
       "note": "40gsm · 정가 13,400원에서 47% 할인 · 1,000매 구성 중 최저 단가",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "brown-original-plus-portable",
@@ -475,7 +475,7 @@
       "url": "https://www.coupang.com/np/search?q=%EB%B8%8C%EB%9D%BC%EC%9A%B4%20%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90%20%ED%94%8C%EB%9F%AC%EC%8A%A4%20%ED%9C%B4%EB%8C%80%EC%9A%A9%20%EC%BA%A1%ED%98%95%2020%EB%A7%A4%2012%EA%B0%9C",
       "partnerUrl": "https://link.coupang.com/a/iPv1yOYAO4",
       "note": "55gsm 휴대용 · 외출용 소용량이라 1매당 단가 높음",
-      "checkedAt": "2026-11-23"
+      "checkedAt": "2026-11-24"
     }
   ]
 }
