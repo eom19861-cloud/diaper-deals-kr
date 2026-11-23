@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T08:30:00+09:00",
+  "updatedAt": "2026-11-24T08:42:00+09:00",
   "dataNote": "쿠팡에서 판매 중인 상품의 공개 판매가를 기준으로 수집했습니다. 모든 가격·링크는 쿠팡 상품 페이지(또는 쿠팡 검색 결과)로 연결되며, 실제 결제 금액은 쿠폰·카드할인·와우회원 혜택에 따라 달라질 수 있습니다.",
   "items": [
     {
@@ -158,20 +158,20 @@
       "id": "huggies-maxdry-6",
       "category": "diaper",
       "brand": "하기스",
-      "name": "하기스 맥스드라이 팬티형 기저귀 점보형",
+      "name": "하기스 NEW 맥스드라이 팬티형 기저귀 (남아)",
       "stage": 6,
       "type": "팬티형",
       "form": null,
-      "packLabel": "29매 × 4팩 = 총 116매",
-      "totalCount": 116,
-      "totalPrice": 80400,
+      "packLabel": "38매 × 2팩 = 총 76매",
+      "totalCount": 76,
+      "totalPrice": 53240,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 693,
-      "url": "https://www.coupang.com/vp/products/8750574165?itemId=28889597042",
+      "unitPrice": 701,
+      "url": "https://www.coupang.com/vp/products/9358055613?itemId=24634176466",
       "partnerUrl": "https://link.coupang.com/a/iPvCwLG7y0",
-      "note": "6단계 14~19kg · 로켓배송 무료",
-      "checkedAt": "2026-11-23"
+      "note": "6단계 14~19kg 남아용 · 로켓배송 무료 · 같은 상품 152매(102,000원)가 1매당 30원 저렴",
+      "checkedAt": "2026-11-24"
     },
     {
       "id": "huggies-maxdry-band-4",
