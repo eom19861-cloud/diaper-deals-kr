@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-25T08:45:00+09:00",
-  "dataNote": "쿠팡에서 판매 중인 상품의 공개 판매가를 기준으로 수집했습니다. 모든 가격·링크는 쿠팡 상품 페이지(또는 쿠팡 검색 결과)로 연결되며, 실제 결제 금액은 쿠폰·카드할인·와우회원 혜택에 따라 달라질 수 있습니다.",
+  "updatedAt": "2026-11-25T11:00:00+09:00",
+  "dataNote": "쿠팡 와우회원가(일반 할인·와우쿠폰 할인 포함)를 기준으로 수집했습니다. 웰컴백 쿠폰·와우 가입 쿠폰·1회성 타겟 쿠폰처럼 계정에만 적용되는 할인은 제외했고, 실제 결제 금액은 쿠폰·카드할인·배송 조건에 따라 달라질 수 있습니다. 모든 가격·링크는 쿠팡 상품 페이지(또는 쿠팡 검색 결과)로 연결됩니다.",
   "items": [
     {
       "id": "kindo-guardians-7-box",
@@ -37,7 +37,7 @@
       "unitPrice": 948,
       "url": "https://www.coupang.com/vp/products/8034890802?itemId=25098814941&vendorItemId=92102342542",
       "partnerUrl": "https://link.coupang.com/a/iPvulE1EaW",
-      "note": "낱팩 구매 시 40매 구성보다 1매당 190원 비쌈",
+      "note": "낱팩 구매 시 40매 구성보다 1매당 278원 비쌈",
       "checkedAt": "2026-11-25"
     },
     {
@@ -56,7 +56,7 @@
       "unitPrice": 599,
       "url": "https://www.coupang.com/vp/products/8034890802?itemId=21309130396",
       "partnerUrl": "https://link.coupang.com/a/iPvxnfMlTU",
-      "note": "특대형 9~14kg · 로켓배송 무료 · 같은 상품 48매·144매도 1매당 599원",
+      "note": "특대형 9~14kg · 로켓배송 무료 · 같은 상품 48매·96매·120매도 1매당 599원",
       "checkedAt": "2026-11-25"
     },
     {
@@ -69,13 +69,13 @@
       "form": null,
       "packLabel": "30매 × 4팩 = 총 120매",
       "totalCount": 120,
-      "totalPrice": 61880,
+      "totalPrice": 59960,
       "shipping": 0,
       "seller": "쿠팡",
-      "unitPrice": 516,
+      "unitPrice": 500,
       "url": "https://www.coupang.com/np/search?q=%ED%82%A8%EB%8F%84%20%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%20%EC%98%A4%EC%8A%AC%EB%A6%BC%20%EC%8D%B8%EB%A8%B8%ED%8C%AC%ED%8B%B0%206%EB%8B%A8%EA%B3%84%20120%EB%A7%A4",
       "partnerUrl": "https://link.coupang.com/a/iPvLvG8roy",
-      "note": "6단계 14~19kg · 무료배송",
+      "note": "6단계 14~19kg · 무료배송 · 와우쿠폰할인가 기준(일반판매가 61,880원)",
       "checkedAt": "2026-11-25"
     },
     {
@@ -107,13 +107,13 @@
       "form": null,
       "packLabel": "26매 × 6팩 = 총 156매",
       "totalCount": 156,
-      "totalPrice": 70660,
+      "totalPrice": 94500,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 453,
+      "unitPrice": 606,
       "url": "https://www.coupang.com/vp/products/9482857594?itemId=28696391733",
       "partnerUrl": "https://link.coupang.com/a/iMnhtg5DHw",
-      "note": "대형 7~13kg · 로켓배송 무료 · 와우 가입 쿠폰할인가(일반판매가 94,500원) · 역대 최저 57,450원",
+      "note": "대형 7~13kg · 로켓배송 무료 · 신규 와우 가입 쿠폰 적용 시 70,660원(계정 전용이라 기준가에서 제외) · 역대 최저 57,450원",
       "checkedAt": "2026-11-25"
     },
     {
@@ -151,7 +151,7 @@
       "unitPrice": 626,
       "url": "https://www.coupang.com/vp/products/8750574165?itemId=27985546769&vendorItemId=94943228487",
       "partnerUrl": "https://link.coupang.com/a/iPvAbm58H6",
-      "note": "같은 상품 160매 구성이 1매당 30원 저렴",
+      "note": "같은 상품 160매 구성이 1매당 24원 저렴",
       "checkedAt": "2026-11-25"
     },
     {
@@ -164,13 +164,13 @@
       "form": null,
       "packLabel": "38매 × 2팩 = 총 76매",
       "totalCount": 76,
-      "totalPrice": 50000,
+      "totalPrice": 53240,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 658,
+      "unitPrice": 701,
       "url": "https://www.coupang.com/vp/products/9358055613?itemId=24634176466",
       "partnerUrl": "https://link.coupang.com/a/iPvCwLG7y0",
-      "note": "6단계 14~19kg 남아용 · 로켓배송 무료 · 3,240원 쿠폰 적용가(정상 53,240원) · 같은 상품 152매(102,000원·671원/매)가 1매당 13원 저렴",
+      "note": "6단계 14~19kg 남아용 · 로켓배송 무료 · 3,240원 쿠폰(1회) 적용 시 50,000원 · 같은 상품 152매(102,000원·671원/매)가 1매당 30원 저렴",
       "checkedAt": "2026-11-25"
     },
     {
@@ -240,13 +240,13 @@
       "form": null,
       "packLabel": "34매 × 3팩 = 총 102매",
       "totalCount": 102,
-      "totalPrice": 40850,
+      "totalPrice": 40420,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 400,
+      "unitPrice": 396,
       "url": "https://www.coupang.com/vp/products/8357741887?itemId=26433573330",
       "partnerUrl": "https://link.coupang.com/a/iPs9HQYu3U",
-      "note": "특대형 13~18kg · 204매 구성 판매 종료로 102매 구성으로 교체 · 와우쿠폰할인가 40,420원(396원/매)",
+      "note": "특대형 13~18kg · 204매 구성 판매 종료로 102매 구성으로 교체 · 와우쿠폰할인가 기준(일반판매가 40,850원)",
       "checkedAt": "2026-11-25"
     },
     {
@@ -297,13 +297,13 @@
       "form": null,
       "packLabel": "총 80매",
       "totalCount": 80,
-      "totalPrice": 43800,
+      "totalPrice": 39850,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
-      "unitPrice": 548,
+      "unitPrice": 498,
       "url": "https://www.coupang.com/vp/products/8733390582?itemId=25137554348",
       "partnerUrl": "https://link.coupang.com/a/iPvOPs0PwO",
-      "note": "7단계 80매 구성 · 쿠팡 로켓배송",
+      "note": "7단계 80매 구성 · 와우쿠폰할인가 기준(일반판매가 43,800원)",
       "checkedAt": "2026-11-25"
     },
     {
@@ -354,13 +354,13 @@
       "form": "캡형",
       "packLabel": "70매 × 10팩 = 총 700매",
       "totalCount": 700,
-      "totalPrice": 16990,
+      "totalPrice": 16460,
       "shipping": 0,
       "seller": "쿠팡 로켓배송",
       "unitPrice": 24,
       "url": "https://www.coupang.com/vp/products/7904856969",
       "partnerUrl": "https://link.coupang.com/a/iPsQ5rdh36",
-      "note": "70gsm 엠보싱 · 정가 22,900원에서 25% 할인",
+      "note": "70gsm 엠보싱 · 정가 22,900원에서 28% 할인",
       "checkedAt": "2026-11-25"
     },
     {
